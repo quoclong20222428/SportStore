@@ -1,0 +1,89 @@
+﻿@model Order
+
+<h2>Checkout now</h2>
+<p>Please enter your detail, and we'll ship your goods right away!</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="checkout" method="post" class="needs-validation" novalidate>
+	<h3>Ship to</h3>
+	<div class="form-group">
+		<label>Name:</label>
+		<input asp-for="Name" class="form-control" required/>
+		<div class="invalid-feedback">
+			Please choose a username.
+		</div>
+	</div>
+	<h3>Address</h3>
+	<div class="form-group">
+		<label>Line 1:</label>
+		<input asp-for="Line1" class="form-control" required/>
+		<div class="invalid-feedback">
+			Please choose a Address.
+		</div>
+	</div>
+	<div class="form-group">
+		<label>Line 2:</label>
+		<input asp-for="Line2" class="form-control" />
+	</div>
+	<div class="form-group" >
+		<label>Line 3:</label>
+		<input asp-for="Line3" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label>City:</label>
+		<input asp-for="City" class="form-control" required/>
+		<div class="invalid-feedback">
+			Please choose a city.
+		</div>
+	</div>
+	<div class="form-group">
+		<label>State:</label>
+		<input asp-for="State" class="form-control" required/>
+		<div class="invalid-feedback">
+			Please choose a state.
+		</div>
+	</div>
+	<div class="form-group">
+		<label>Zip:</label>
+		<input asp-for="Zip" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label>Country:</label>
+		<input asp-for="Country" class="form-control" required/>
+		<div class="invalid-feedback">
+			Please choose a country.
+		</div>
+	</div>
+	<h3>Option</h3>
+	<div class="checkbox">
+		<label>
+			<input asp-for="GiftWrap" />
+		</label>
+	</div>
+	<div class="text-center">
+		<input class="btn btn-primary" type="submit" value="Complete Order" />
+	</div>
+</form>
+
+@section Scripts {
+		<script>
+			(function () {
+		  'use strict'
+
+		  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		  var forms = document.querySelectorAll('.needs-validation')
+
+		  // Loop over them and prevent submission
+		  Array.prototype.slice.call(forms)
+			.forEach(function (form) {
+			  form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+				  event.preventDefault()
+				  event.stopPropagation()
+				}
+
+				form.classList.add('was-validated')
+			  }, false)
+			})
+		})()
+	</script>
+}

@@ -1,0 +1,12 @@
+﻿@page
+<div>
+	<h2>Thank!</h2>
+	<p>Thanks for placing order #OrderId</p>
+	<p>We'll ship to your address</p>
+	<a class="btn btn-primary" asp-controller="Home">Return to Store</a>
+</div>
+
+@functions {
+	[BindProperty(SupportsGet = true)]
+	public String? OrderId { get; set; }
+}
