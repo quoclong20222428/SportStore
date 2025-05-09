@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CNTTB\\CN_Net\\SportStoreCompleteOrder\\SportStore\\SportStore\\SportStore.csproj": {}
+    "D:\\CNTTB\\DevOps\\SportStore\\SportStore\\SportStore.csproj": {}
   },
   "projects": {
-    "D:\\CNTTB\\CN_Net\\SportStoreCompleteOrder\\SportStore\\SportStore\\SportStore.csproj": {
+    "D:\\CNTTB\\DevOps\\SportStore\\SportStore\\SportStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CNTTB\\CN_Net\\SportStoreCompleteOrder\\SportStore\\SportStore\\SportStore.csproj",
+        "projectUniqueName": "D:\\CNTTB\\DevOps\\SportStore\\SportStore\\SportStore.csproj",
         "projectName": "SportStore",
-        "projectPath": "D:\\CNTTB\\CN_Net\\SportStoreCompleteOrder\\SportStore\\SportStore\\SportStore.csproj",
+        "projectPath": "D:\\CNTTB\\DevOps\\SportStore\\SportStore\\SportStore.csproj",
         "packagesPath": "C:\\Users\\QUOCLONG\\.nuget\\packages\\",
-        "outputPath": "D:\\CNTTB\\CN_Net\\SportStoreCompleteOrder\\SportStore\\SportStore\\obj\\",
+        "outputPath": "D:\\CNTTB\\DevOps\\SportStore\\SportStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

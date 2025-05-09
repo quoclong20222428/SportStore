@@ -1,4 +1,5 @@
-﻿<table class="table table-sm table-striped table-bordered">
+﻿@using SportStore.Models
+<table class="table table-sm table-striped table-bordered">
     <thead>
         <tr><th colspan="5" class="text-center">@TableTitle</th></tr>
     </thead>
@@ -9,13 +10,13 @@
             {
                         <tr>
                             <td>@o.Name</td><td>@o.Zip</td><th>Product</th><th>Quantity</th>
-                        <td>                    
-                            <button class="btn btn-sm btn-danger" 
-                                    @onclick="@(e => OrderSelected.InvokeAsync(o.OrderID))">
+                            <td>                    
+                                <button class="btn btn-sm btn-danger" 
+                                        @onclick="@(() => SelectOrder(o.OrderID))">
                             @ButtonLabel
-                            </button>
-                        </td>
-                    </tr>
+                                </button>
+                            </td>
+                        </tr>
                 @foreach (CartLine line in o.Lines)
                 {
                                 <tr>
@@ -34,16 +35,20 @@
 </table>
 
 @code {
-
     [Parameter]
     public string TableTitle { get; set; } = "Orders";
 
     [Parameter]
-    public IEnumerable<Order> Orders { get; set; }
+    public IEnumerable<Order> Orders { get; set; } = Enumerable.Empty<Order>();
 
     [Parameter]
     public string ButtonLabel { get; set; } = "Ship";
 
     [Parameter]
     public EventCallback<int> OrderSelected { get; set; }
+
+    private async Task SelectOrder(int orderId)
+    {
+        await OrderSelected.InvokeAsync(orderId);
+    }
 }

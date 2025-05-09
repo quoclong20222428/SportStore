@@ -4,7 +4,12 @@
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
         public virtual void AddItem(Product product, int quantity) 
-        { 
+        {
+            if (quantity <= 0)
+            {
+                return;
+            }
+
             CartLine? line = Lines.Where(p =>p.Product.ProductID == product.ProductID).FirstOrDefault();
             if (line == null)
             {
